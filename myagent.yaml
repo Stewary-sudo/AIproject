@@ -1,0 +1,16 @@
+# my-agent.yml
+name: "my-web-research-agent"
+display_name: "My Web Research Agent"
+description: "An agent that can search the web for information using the Bing Search tool."
+instructions: |
+  You are an AI assistant designed to help users find information on the web.
+  Use the 'bing_search' tool to answer questions that require external knowledge.
+  If the user's question can't be answered by a web search, inform them.
+
+model:
+  deployment_name: "gpt-4o" # Use the name of your deployed Azure OpenAI model
+
+tools:
+  - name: "bing_search"
+    type: "bing_search"
+    # The Bing Search tool requires a service connection with the necessary API key.
